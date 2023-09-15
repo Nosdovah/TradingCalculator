@@ -1,0 +1,57 @@
+main {
+    display: flex;
+    justify-content: center;
+
+}
+
+main div#calculatorBody {
+    background-color: rgb(170, 170, 170);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+
+}
+
+main div#calculatorBody div.screen {
+    margin-top: 5%;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 85%;
+    background-color: rgb(238, 238, 238);
+}
+
+main div#calculatorBody div.screen h2 {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+main div#calculatorBody div.ClearDeleteContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 10%;
+    gap: 20px;
+}
+
+main div#calculatorBody div.ClearDeleteContainer button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    width: 40%;
+}
+
+main div#calculatorBody div.numpadContainer {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+/* main div.clearDeleteContainer {
+    background:;
+} */
