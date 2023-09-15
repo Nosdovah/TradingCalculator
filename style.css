@@ -49,8 +49,16 @@ main div#calculatorBody div.ClearDeleteContainer button {
 main div#calculatorBody div.numpadContainer {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
 
 }
+
+main div#calculatorBody div.numpadContainer button {
+    width: 20%;
+}
+
 
 /* main div.clearDeleteContainer {
     background:;
