@@ -1,66 +1,47 @@
-var countDisplay = document.getElementById('countDisplay')
-var resultDisplay = document.getElementById('resDisplay')
-const buttonClick = document.querySelectorAll(`input[type="button"]`)
+class Calculator {
+    constructor(preOperandText , postOperandText) {
+        this.preOperandText= preOperandText
+        this.postOperandText = postOperandText
+        this.clear()
 
-let Pre = ""
-let Post = ""
-let arithmetic = []
-let Res = 0;
+    }
 
-//Gotta make the calculate logic
+    clear() {
+        this.preOperand = ""
+        this.postOperand = ""
+        this.operator = undefined
+        
+    }
+     
+    delete() {
 
-buttonClick.forEach(element => {
-    element.addEventListener('click', function () {
-        if (this.classList.value == "equal operator") {
-            //Logic
-        }
-        if (this.classList.value == "operator") {
-            if (Pre !== null || Pre !== "") {
-                //Add to display
-                countDisplay.value += this.value
-                //Add to Pre
-                Pre += this.value
-
-                //string to array for Pre
-                let PreArr = Pre.split("")
-                console.log(PreArr)
-
-                //Check operand beforehand if there was an existent operand
-                const checkOperand = PreArr.some(operand => operand == (this.classList.value == "operator"))
-                checkOperand ? console.log("True") : console.log("false")
-            } else {
-                return
-            }
-
-        } else {
-            if (this.value === "AC") {
-                countDisplay.value = ''
-                Pre = ""
-                Post = ""
-                // console.log(Pre)
-            }
-            else if (this.value === "C") {
-                //add to display
-                countDisplay.value = countDisplay.value.toString().slice(0, -1)
-
-                //Arithmetic
-                Pre = Pre.slice(0, -1)
-                //console.log(Pre)
-            } else {
-                if (this.classList.value !== "operator" && this.classList.value !== "equal operator") {
-                    //Display
-                    countDisplay.value += this.value
-
-                    //Append to Pre
-                    Pre += this.value
-                }
-                // console.log(Pre)             
-            }
-        }
+    }
 
 
+    addNumber(number) {
+        this.preOperand = number
+    }
+
+    displayUpdate() {
+        this.preOperandText.textContent = this.preOperand
+    }
+}
+
+const numbers = document.querySelectorAll(['numbers']);
+const operand = document.querySelectorAll(['operand']);
+const equal = document.querySelector(['equal'])
+const del = document.querySelector(['delete'])
+const clear = document.querySelector(['clear'])
+
+const preOperandText = document.querySelector(['pre-number'])
+const postOperandText = document.querySelector(['post-number'])
+
+const calculator = new Calculator(preOperandText ,postOperandText);
+
+numbers.forEach(button => {
+    button.addEventListener('click' , () => {
+        calculator.addNumber(button.textContent)
+        calculator.displayUpdate()
     })
 })
 
-
-//Case 1 : functional arithmetic function 
