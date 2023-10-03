@@ -1,3 +1,3 @@
 # TradingCalculator
  
-Simple Calculator
+Simple Calculator by Nosdovah 
