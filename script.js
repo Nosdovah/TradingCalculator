@@ -23,7 +23,7 @@ class Calculator {
 
     addNumber(number) {
         //if you click multiple dot (.)
-        if (number === "." && this.preOperand.includes(".")) return
+        if (number === "." && this.postOperand.includes(".")) return
         this.postOperand += number.toString()
         //If you click zero first thing first
         if (this.postOperand[0] === "0")  {
